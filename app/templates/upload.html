@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+</head>
+<body>
+    <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Document Upload Form</h1><br>
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        <br>
+        <label for="document">Upload Document:</label>
+        <input type="file" name="document" required><br>
+        <br>
+        <button input="submit">Upload File</button>
+    </form>
+
+    {% if url %}
+        <p>Upload file: <a href="{{ url }}">{{ url }}</a></p>
+    {% endif %}
+</body>
+</html>
